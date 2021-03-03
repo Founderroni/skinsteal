@@ -9,7 +9,6 @@ import (
 	"image"
 	"image/png"
 	"os"
-	"strings"
 )
 
 var (
@@ -28,20 +27,6 @@ func CapeToRGBA(s protocol.Skin) *image.RGBA {
 	t := image.NewRGBA(image.Rect(0, 0, int(s.CapeImageWidth), int(s.CapeImageHeight)))
 	t.Pix = s.CapeData
 	return t
-}
-
-/* some servers do this cringe thing where they use SkinData
-   to display information however png.Encode fails to decode it,
-   most of these bots have either no name or one with fancy characters
-   hence this check, if it interferes with your usage just remove the
-   if isBot(name) { return } */
-func isBot(s string) bool {
-	if strings.Contains(s, "§") {
-		return true
-	} else if s == "" {
-		return true
-	}
-	return false
 }
 
 func main() {
@@ -74,9 +59,6 @@ func main() {
 			go func() {
 				for _, player := range p.Entries {
 					name := player.Username
-					if isBot(name) {
-						return
-					}
 					skin := SkinToRGBA(player.Skin)
 					cape := CapeToRGBA(player.Skin)
 					path, _ := os.Getwd()
