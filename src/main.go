@@ -13,7 +13,7 @@ import (
 )
 
 var (
-	ip string
+	ip   string
 	port string
 )
 
@@ -50,11 +50,11 @@ func main() {
 	fmt.Print("Server Port: ")
 	_, _ = fmt.Scanln(&port)
 	_ = os.Mkdir("stolen", 0755)
-	dialer := minecraft.Dialer {
+	dialer := minecraft.Dialer{
 		TokenSource: auth.TokenSource,
 	}
 
-	address := ip+":"+port
+	address := ip + ":" + port
 	conn, err := dialer.Dial("raknet", address)
 	if err != nil {
 		panic(err)
@@ -89,7 +89,7 @@ func main() {
 					fileCape.Close()
 					fmt.Println("Stolen " + name)
 				}
-			} ()
+			}()
 		}
 
 		p := &packet.RequestChunkRadius{ChunkRadius: 32}
@@ -98,4 +98,3 @@ func main() {
 		}
 	}
 }
-
