@@ -19,13 +19,13 @@ var (
 
 // ty TwistedAsylum in the gophertunnel discord
 func SkinToRGBA(s protocol.Skin) *image.RGBA {
-	t := image.NewRGBA(image.Rect(0, 0, int(s.SkinImageHeight), int(s.SkinImageWidth)))
+	t := image.NewRGBA(image.Rect(0, 0, int(s.SkinImageWidth), int(s.SkinImageHeight)))
 	t.Pix = s.SkinData
 	return t
 }
 
 func CapeToRGBA(s protocol.Skin) *image.RGBA {
-	t := image.NewRGBA(image.Rect(0, 0, int(s.CapeImageHeight), int(s.CapeImageWidth)))
+	t := image.NewRGBA(image.Rect(0, 0, int(s.CapeImageWidth), int(s.CapeImageHeight)))
 	t.Pix = s.CapeData
 	return t
 }
