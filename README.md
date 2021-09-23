@@ -3,6 +3,8 @@
 ### steal everyone on the servers skin
 ### https://streamable.com/7niuie
 
+### You need the go programming language installed to use this
+
 ### to setup: <br>
 - go build src/main.go
 - run main.exe
