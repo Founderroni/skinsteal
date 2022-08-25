@@ -1,5 +1,7 @@
 # skinsteal
 
+Originally made by based, I just forked the repo
+
 ### steal everyone on the servers skin
 ### https://streamable.com/7niuie
 
